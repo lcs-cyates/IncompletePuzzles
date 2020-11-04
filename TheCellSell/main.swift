@@ -28,6 +28,10 @@ let day = Int(readLine()!)!
 print("Number of evening minutes?")
 let evening = Int(readLine()!)!
 
+// Get weekend minutes
+print("Number of weekend minutes?")
+let weekend = Int(readLine()!)!
+
 // PROCESS
 
 // Calculate cost for plan A
@@ -39,6 +43,9 @@ a += (day - 100) * 25
 // Add evening cost
 a += evening * 15
 
+// Add weekend cost
+a += weekend * 20
+
 // Calculate cost for plan B
 var b = 0
 
@@ -48,13 +55,18 @@ b += (day - 250) * 45
 // Add evening cost
 b += evening * 35
 
+// Add weekend cost
+b += weekend * 25
 
 // OUTPUT
-print("Plan A costs \(a)")
-print("Plan B costs \(b)")
+print("Plan A costs \(a) cents")
+print("Plan B costs \(b) cents")
 
 if a > b {
     print("Plan B is cheapest.")
 } else {
     print("Plan A is cheapest.")
+}
+if a == b {
+    print("Plans A and B are the same price")
 }
